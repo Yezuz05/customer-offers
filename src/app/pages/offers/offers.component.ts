@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from './../../services/app.service';
 
 @Component({
   selector: 'app-offers',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offers.component.scss']
 })
 export class OffersComponent implements OnInit {
+  offers = [];
 
-  constructor() { }
+  constructor(private appService: AppService) {}
 
   ngOnInit() {
+    this.getOffers();
   }
 
+  getOffers() {
+    this.appService.getOffers().subscribe((res: any) => {
+      this.offers = res.offers;
+    });
+  }
 }

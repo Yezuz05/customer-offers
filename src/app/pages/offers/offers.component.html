@@ -1,12 +1,12 @@
 <h3 class="heading">Your Offers</h3>
 <div class="offers">
-  <div class="offer card">
-    <h3>Internet Bundle</h3>
-    <p><b>From: </b> 2017-01-01</p>
+  <div class="offer card" *ngFor="let offer of offers">
+    <h3>{{ offer.name }}</h3>
+    <p><b>From: </b> {{ offer.contractStartDate }}</p>
     <p>
       <b>To: </b>
-      2019-01-01
+      {{ offer.contractEndDate }}
     </p>
-    <a href="">View Subscriptions</a>
+    <a routerLink="/subscriptions/{{ offer.id }}">View Subscriptions</a>
   </div>
 </div>
