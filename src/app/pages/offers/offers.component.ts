@@ -8,6 +8,7 @@ import { AppService } from './../../services/app.service';
 })
 export class OffersComponent implements OnInit {
   offers = [];
+  isFetchingOffers = false;
 
   constructor(private appService: AppService) {}
 
@@ -16,8 +17,15 @@ export class OffersComponent implements OnInit {
   }
 
   getOffers() {
-    this.appService.getOffers().subscribe((res: any) => {
-      this.offers = res.offers;
-    });
+    this.isFetchingOffers = true;
+    this.appService.getOffers().subscribe(
+      (res: any) => {
+        this.isFetchingOffers = false;
+        this.offers = res.offers;
+      },
+      error => {
+        this.isFetchingOffers = false;
+      }
+    );
   }
 }
