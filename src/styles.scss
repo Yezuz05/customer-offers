@@ -24,9 +24,10 @@ h3.heading {
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 6px;
-  height: 130px;
+  height: max-content;
   padding: 20px;
-  h3 {
+  h3,
+  h4 {
     margin-bottom: 10px;
   }
   p {
@@ -35,6 +36,14 @@ h3.heading {
   }
   a {
     font-size: 12px;
+  }
+  &__grid {
+    width: 100%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-gap: 20px;
+    position: relative;
   }
 }
 

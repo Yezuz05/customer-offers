@@ -1,0 +1,26 @@
+<h3 class="heading">
+  {{ offerName }} Subscriptions &nbsp;
+  <small><a routerLink="/offers">Back to offers</a></small>
+</h3>
+<div class="subscriptions card__grid">
+  <div *ngIf="isFetchingSubscriptions" class="loader">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="subcscription card" *ngFor="let subscription of subscriptions">
+    <h3>{{ subscription.name }}</h3>
+    <p><b>Type</b>: {{ subscription.type }}</p>
+    <h4 *ngIf="subscription.usage && subscription.usage.length">Usage</h4>
+    <div class="usage">
+      <div *ngFor="let use of subscription.usage">
+        <p><b>Type</b>: {{ use.type }}</p>
+        <p><b>Used</b>: {{ use.used }} kb</p>
+        <p><b>Limit</b>: {{ use.limit }} kb</p>
+      </div>
+    </div>
+  </div>
+</div>
