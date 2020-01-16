@@ -1,4 +1,7 @@
-<h3 class="heading">{{ offerName }} Subscriptions</h3>
+<h3 class="heading">
+  {{ offerName }} Subscriptions &nbsp;
+  <small><a routerLink="/offers">Back to offers</a></small>
+</h3>
 <div class="subscriptions card__grid">
   <div *ngIf="isFetchingSubscriptions" class="loader">
     <div class="lds-ring">
