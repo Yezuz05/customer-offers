@@ -13,3 +13,27 @@ body {
   min-height: 100vh;
   font-family: 'Comfortaa', cursive;
 }
+
+h3.heading {
+  margin-bottom: 30px;
+}
+
+.card {
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  height: 130px;
+  padding: 20px;
+  h3 {
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  a {
+    font-size: 12px;
+  }
+}
