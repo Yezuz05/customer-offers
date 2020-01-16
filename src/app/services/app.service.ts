@@ -12,4 +12,8 @@ export class AppService {
   getOffers() {
     return this.http.get(`${this.baseUrl}/offers`);
   }
+
+  getOfferSubscriptions(offerId) {
+    return this.http.get(`${this.baseUrl}/offers/${offerId}/subscriptions`);
+  }
 }
